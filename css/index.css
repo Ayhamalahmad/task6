@@ -1,87 +1,170 @@
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
 
-  /* Start  Container */
-  .container {
-      padding-left: 15px;
-      padding-right: 15px;
-      margin-left: auto;
-      margin-right: auto;
-      /*  */
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
-      justify-content: center;
-      gap: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  }
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    transition: all .3s;
+}
 
-  /*small*/
-  @media (max-width: 767px) {
-      .container {
-          width: 100%;
-      }
+/* Start  Container */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    /*  */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    gap: 30px;
+}
 
-  }
+/*small*/
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
 
-  @media (min-width: 768px) {
-      .container {
-          width: 750px;
-      }
+}
 
-  }
+/*Medium*/
+@media (min-width: 768px) {
+    .container {
+        /* width: 750px; */
+        width: 100%;
+    }
+}
 
-  /*Medium*/
-  @media (min-width: 992px) {
-      .container {
-          width: 750px;
-      }
-  }
+/*Medium*/
+@media (min-width: 992px) {
+    .container {
+        width: 750px;
+        /* width: 100%; */
+    }
+}
 
-  /*Large*/
-  @media (min-width: 1200px) {
-      .container {
-          width: 1170px;
-      }
-  }
+/*Large*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
 
-  /* End  Container */
-.container {}
-.container .counter{
+/* End  Container */
+/* Start Counter */
+.container .counter {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 50%;
-    background-color: rebeccapurple;
     color: white;
     padding: 20px 25px;
-    border-radius: 10px;
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    border-radius: 2px;
+    /* background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+    background-color: #080808;
     box-shadow: 1px 1px 1px 0px black;
-    font-size: 20px;
-    font-weight: bold;
+    color: rgba(255, 255, 255, .35);
+    text-transform: uppercase;
 }
-.container .counter .seconds{}
-.container .counter .minutes{}
-.container .counter .hours{}
-.container .counter .days{}
-/* Buttons */
-.container .buttons{
+
+
+/*small*/
+@media (max-width: 767px) {
+    .container .counter {
+        width: 100%;
+        font-size: 10px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .container .counter {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container .counter {
+        width: 50%;
+    }
+}
+
+.container .counter div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.container .counter div span {
+    font-size: 60px;
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .container .counter div span {
+        font-size: 15px;
+    }
+}
+
+.container .counter div:not(:last-child):before {
+    content: ":";
+    font-size: 54px;
+    display: block;
+    position: absolute;
+    left: 150%;
+}
+
+@media (max-width: 767px) {
+    .container .counter div:not(:last-child):before {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container .counter div:not(:last-child):before {
+        left: 120%;
+    }
+}
+
+
+/*Start Buttons */
+.container .buttons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 50%;
 }
-.container .buttons button{
+
+/*small*/
+@media (max-width: 767px) {
+    .container .buttons {
+        width: 100%;
+    }
+}
+
+.container .buttons button {
     transition: all .3s;
-    background-color: red;
+    background-color: #080808;
     color: white;
     padding: 5px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: .3s;
 }
+
+.container .buttons button:hover {
+    background-color: #939393;
+}
+/* End Buttons */
+
+/* End Counter */

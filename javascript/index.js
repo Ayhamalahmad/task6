@@ -4,6 +4,7 @@ let minutesDiv = document.querySelector(".minutes");
 let hoursDiv = document.querySelector(".hours");
 let daysDiv = document.querySelector(".days");
 let buttons = document.querySelectorAll(".buttons button");
+// Botton
 let startBtn = document.querySelector(".start");
 let stopBtn = document.querySelector(".stop");
 let resetBtn = document.querySelector(".reset");
@@ -13,6 +14,7 @@ let minutes = 0;
 let hours = 0;
 let days = 0;
 let interval;
+let isTimerRunning = false;
 function timer() {
   seconds++;
   secondsDiv.textContent = seconds < 10 ? `0${seconds} ` : seconds;
@@ -37,19 +39,26 @@ function timer() {
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (e.target === startBtn) {
-      startTimer();
+      if (!isTimerRunning) {
+        startTimer();
+        isTimerRunning = true;
+      }
     }
     if (e.target === stopBtn) {
-      stopF();
+      if (isTimerRunning) {
+        stopF();
+        isTimerRunning = false;
+      }
     }
     if (e.target === resetBtn) {
       resetF();
+      isTimerRunning = false;
     }
   });
 });
 // Start Function
 function startTimer() {
-  interval = setInterval(timer, 1);
+  interval = setInterval(timer, 1000);
 }
 // Reset Function
 function resetF() {
@@ -58,10 +67,10 @@ function resetF() {
   minutes = 0;
   hours = 0;
   days = 0;
-  daysDiv.textContent="00";
-  hoursDiv.textContent="00";
-  minutesDiv.textContent="00";
-  secondsDiv.textContent="00";
+  daysDiv.textContent = "00";
+  hoursDiv.textContent = "00";
+  minutesDiv.textContent = "00";
+  secondsDiv.textContent = "00";
 }
 // Stop Function
 function stopF() {
