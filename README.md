@@ -4,7 +4,7 @@ This is a simple JavaScript timer counter application that displays the elapsed 
 
 ## Demo
 
-You can see the live demo of the timer counter [here](https://ayhamalahmad.github.io/task6/).
+You can see the live demo of the timer counter [here](https://ayhamalahmad.github.io/task6TimerCounter/).
 
 
 
