@@ -1,0 +1,87 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  /* Start  Container */
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      /*  */
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      gap: 30px;
+
+  }
+
+  /*small*/
+  @media (max-width: 767px) {
+      .container {
+          width: 100%;
+      }
+
+  }
+
+  @media (min-width: 768px) {
+      .container {
+          width: 750px;
+      }
+
+  }
+
+  /*Medium*/
+  @media (min-width: 992px) {
+      .container {
+          width: 750px;
+      }
+  }
+
+  /*Large*/
+  @media (min-width: 1200px) {
+      .container {
+          width: 1170px;
+      }
+  }
+
+  /* End  Container */
+.container {}
+.container .counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    box-shadow: 1px 1px 1px 0px black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.container .counter .seconds{}
+.container .counter .minutes{}
+.container .counter .hours{}
+.container .counter .days{}
+/* Buttons */
+.container .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+.container .buttons button{
+    transition: all .3s;
+    background-color: red;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
